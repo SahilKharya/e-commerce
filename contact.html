@@ -1,0 +1,302 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Myntra Online Shopping</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <style>
+
+            .row-contact {
+                text-align: center;
+            }
+            .address {
+                text-align: center;
+                
+                height: 150px;
+           
+            }
+            .contact1 {
+                border: 2px solid black;
+                width: 50%;
+            }
+            #map {
+                height: 300px;
+               
+            }
+            #mail {
+                text-align: center;
+            }
+            #contact {
+                padding-bottom: 10px; 
+                border-bottom: 1px solid gray;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <div class="header">
+                <div class="row head">  
+                    <div class= "col-md-3 col-xs-3">
+                        <a href="index.html"><img src="img/myntra-sale-logo.jpg" width="100px"></a>
+                    </div>
+                    <div class="col-md-6 col-xs-6" id="title">
+                        <a href="index.html"><img src="img/download.jpg" width="150px"></a>
+                    </div>
+                    <div class= "col-md-3 col-xs-3">
+                        <span id="addCart" class="glyphicon glyphicon-shopping-cart my-cart-icon" style = "font-size:23px"; style= "margin: 60px">
+                        </span>
+                        <div class="modal fade" id="myCart" role="dialog">
+                            <div class="modal-dialog">
+                    <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 style="text-align: center;">Cart</h4>
+                                    </div>
+                                    <div class="modal-body" style="padding:40px 50px;">
+                                        <form role="form" id="formID">
+                                            <div class="form-group">
+                                              <label for="Name"></label>
+                                              <input type="text" id="Name" placeholder="Name" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="Email"></label>
+                                              <input type="text" id="Email" placeholder="Email" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="Number"></label>
+                                              <input type="text" id="Number" placeholder="Phone Number" class="form-control">
+                                            </div>
+                                            <div>
+                                                <label for="Address"></label>
+                                                <textarea placeholder="Address" id="Add" rows="2" cols="10" style="width:100%" class="form-control"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type = "button" class = "btn btn-default" data-dismiss = "modal"> Close</button>
+                                        <button type = "button" class = "btn btn-primary" id="payID">Pay</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <hr>
+            </div>
+
+            <!-- side nav abd menu icon begins -->
+            <div class="row search">
+                <div class=" col-xs-1 col-md-2">
+                    <div class="container1" onclick="myFunction(this)">
+                        <span onclick="openNav()" style="float:right;">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </span>
+
+                        <div id="mySidenav" class="sidenav">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <a href="index.html" class="home"><img src="img/myntra-sale-logo.jpg" style="width:45px; margin:20px;">Home</a><hr>
+                            <a href="#" class="sidelnk">All</a>
+                            <a href="#" class="sidelnk">Men's</a>
+                            <a href="#" class="sidelnk">Women's</a>
+                            <a href="#" class="sidelnk">Kid's</a>
+                            <a href="#" class="sidelnk"><span class="glyphicon glyphicon-shopping-cart" style="margin-right: 13px;"></span>Cart</a>
+                            <a href="about.html" class="sidelnk">About Us</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-xs-3 col-md-4">
+                    <input type="search" class="find" placeholder="    search...">
+                </div>
+                <div class="col-xs-2">
+                    <button type="submit">search</button>
+                </div>
+               
+
+                <div class="col-xs-2 col-md-2">
+
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn btn-default" id="myBtn">Sell</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4>Sell Product</h4>
+                                </div>
+                                <div class="modal-body" style="padding:40px 50px;">
+                                    <form role="form" id="formID">
+                                        <div class="form-group">
+                                          <label for="prodName"></label>
+                                          <input type="text" id="prodName" placeholder="Product Name" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="brandName"></label>
+                                          <input type="text" id="brandName" placeholder="Brand Name" class="form-control">
+                                        </div>
+                                        <div class="row-form">
+                                            <div class="dropdown">
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="choose">Gender
+                                                    <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Male</a></li>
+                                                        <li><a href="#">Female</a></li>
+                                                    </ul>
+                                                </div>
+                                                 <div class="col-md-4">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="choose">Size
+                                                    <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Small</a></li>
+                                                        <li><a href="#">Medium</a></li>
+                                                        <li><a href="#">Large</a></li>
+                                                        <li><a href="#">Xtra-Large</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="choose">Quantity
+                                                    <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">1</a></li>
+                                                        <li><a href="#">2</a></li>
+                                                        <li><a href="#">3</a></li>
+                                                        <li><a href="#">4</a></li>
+                                                        <li><a href="#">5</a></li>
+                                                        <li><a href="#">6</a></li>
+                                                        <li><a href="#">7</a></li>
+                                                        <li><a href="#">8</a></li>
+                                                        <li><a href="#">9</a></li>
+                                                        <li><a href="#">10</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br><br>
+                                        <div class="form-group">
+                                            <label for="prodCat."></label>
+                                            <input type="text" id="prodCat." placeholder="Product Category" class="form-control">
+                                        </div>
+                                        <br>
+
+                                        <div class="row">
+
+                                            <div class="col-xs-6 col-md-6">
+                                                <label for="price"></label>
+                                                <input type="text" placeholder="Price" class="form-control">
+                                            </div>
+
+                                            <div class="col-xs-6 col-md-6">
+                                                <label for="Discount"></label>
+                                                <input type="text" placeholder="Discount" class="form-control">
+                                            </div>
+                                        </div>
+                                        <br><br>
+                                        <div style="height:0px;overflow:hidden">
+                                            <input type="file" id="fileInput" name="fileInput" />
+                                        </div>
+                                        <button type="button" id="fileinput" onclick="chooseFile();" class="btn btn-danger" style="margin-top: 10px;">choose file</button>
+                                        
+                                        <div class="form-group">
+                                            <label for="description"></label>
+                                            <textarea placeholder="Description" id="describe" rows="4" cols="60" style="width:100%" class="form-control"></textarea>
+                                        </div>
+                                        <div class="sellName" style="width:100%;">
+                                            <label for="sellName."></label>
+                                            <input type="text" id="sellName" placeholder="Seller Name" class="form-control">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type = "button" class = "btn btn-default" data-dismiss = "modal"> Close</button>
+                                    <button type = "button" class = "btn btn-primary" id="sellID">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FIMConqueror-323100587854181%2F&width=94&layout=button&action=like&size=small&show_faces=false&share=true&height=65&appId" width="94" height="25" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+            </div>
+            <hr>
+        </header>
+        
+        <div>        
+            <div class="row-contact">
+                <h1>Contact Us</h1>
+                <hr class="contact1">
+            </div>
+            <div class="row content">
+                <div class="col-md-6 col-xs-12">
+                    <div class="address">
+                        <h2>Address</h2>
+                        <p id="contact">Myntra Designs Private Ltd. AKR Tech Park- B Block,Krishna Reddy Industrial Area,7th Mile, Kudlu Gate, Bengaluru - 560068</p>
+
+
+
+                    </div>    
+
+                    <div id="map"></div>
+                </div>
+                <div class="col-md-6 col-xs-12" id="mail">
+                    <br>
+                    <h2>Phone</h2>
+                    <i class="fa fa-phone" style="font-size:30px"></i>
+                    <p id="contact">1800-5050-333</p>
+
+                    <br><br>
+                    <h2>Mail Us</h2>
+                    <p id="contact" style="size:20px;">myshop@myntra.com</p>
+                    <br>
+                    <h2>Follow Us</h2>
+                    <p id="contact">
+                        <a href="https://www.facebook.com/" style="padding:20px;">
+                            <i class="fa fa-facebook-square" style="font-size:48px"></i>
+                        </a>
+                        <a href="https://twitter.com/" style="padding:20px;">
+                            <i class="fa fa-twitter" style="font-size:48px" ></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+       
+        <script>
+                  function initMap() {
+                    var uluru = {lat: 12.8925434, lng: 77.6420921};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 16,
+                    center: uluru
+                    });
+                      var marker = new google.maps.Marker({
+                      position: uluru,
+                      map: map
+                    });
+
+                  }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFrGUue91eQ22u4s9P_mKKqWGOXTQNLk4&callback=initMap"
+                type="text/javascript">
+        </script>
+        <script src="script.js"></script>
+    </body>
+
+</html>

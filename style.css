@@ -1,0 +1,150 @@
+    body {
+        overflow-x: hidden;
+    }
+    #title {
+        text-align: center;
+    }
+    .search {
+        text-align: center;
+    }
+    .find {
+        border-radius: 5px;
+        width: 100%;
+        border: 1px solid;
+    }
+    #addCart {
+        float: right;
+        margin-top: 25px;
+        margin-right: 50px;
+    }
+    hr {
+        border: 1px solid black;
+    }
+
+
+/* div of search begins */
+    .container1 {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+
+/* The side navigation menu */
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+    }
+    input {
+        display: inline!important;
+    }
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s
+    }
+    .sidenav a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    .sidelnk {
+        border-bottom: 1px solid black;
+        border-bottom-left-radius: 5px;
+        margin: 10px;
+    }
+
+/* Form starts*/
+    .modal-header, h4, .close {
+        background-color: #5cb85c;
+        color:white !important;
+        font-size: 30px;
+      }
+    .modal-footer {
+        background-color: #f9f9f9;
+      }
+    #choose {
+        margin: 20px;
+    }
+
+/* slideshow starts */
+    .slideshow-container {
+        max-width: 750px;
+        position: relative;
+        margin: auto;
+        height: 420px;
+    }
+    .mySlides {
+        display: none;
+        margin-top: -20px;
+    }
+    .slider {
+        height: 420px;
+        width: 50vw;
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 5s;
+      animation-name: fade;
+      animation-duration: 5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: 0.6} 
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: 0.6} 
+      to {opacity: 1}
+    }
+
+    @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+    }
